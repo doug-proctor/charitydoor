@@ -20,10 +20,11 @@ class CreateSignupsTable extends Migration
 			$table->string('charity_name');
 			$table->string('charity_address');
 			$table->string('charity_number');
-			$table->boolean('authorised')->nullable();
-			$table->dateTime('authorisation_timestamp')->nullable();
+			$table->boolean('authorised');
+			$table->boolean('anonymous');
+			$table->string('authorisation_code');
+			$table->string('authorisation_timestamp');
             $table->timestamps();
-            //$table->foreign('user_id')->references('id')->on('users');
         });
     }
 

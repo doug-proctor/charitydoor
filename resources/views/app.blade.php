@@ -8,6 +8,9 @@
     <title>TITLE</title>
 
     <link href="{{ url('css/app.css') }}" rel="stylesheet">
+    <link href="{{ url('css/webflow.css') }}" rel="stylesheet">
+
+    <script src="{{ url('js/modernizr-2.7.1.js') }}"></script>
 
 </head>
 <body id="app" class="xhas-person (( appState ))">
@@ -36,6 +39,9 @@
 
 	<!-- <script type="text/javascript" src="{{ url('js/skrollr.min.js') }}"></script> -->
 
+    
+    <script src="{{ url('js/webfont.js') }}"></script>
     <script src="{{ url('js/app.js') }}"></script>
+    <script src="{{ url('js/webflow.js') }}"></script>
 </body>
 </html>
