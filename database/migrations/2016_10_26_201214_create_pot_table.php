@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSignupsTable extends Migration
+class CreatePotTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,18 +13,12 @@ class CreateSignupsTable extends Migration
      */
     public function up()
     {
-        Schema::create('signups', function (Blueprint $table) {
+        Schema::create('pots', function (Blueprint $table) {
             $table->increments('id');
-			//$table->integer('user_id')->unsigned();
-			$table->string('user_name');
+            $table->string('user_name');
 			$table->string('user_email');
 			$table->float('amount');
-			$table->string('charity_name');
-			$table->string('charity_address');
-			$table->string('charity_number');
 			$table->boolean('authorised');
-			$table->boolean('anonymous');
-			$table->boolean('increase');
 			$table->string('authorisation_code');
 			$table->string('authorisation_timestamp');
             $table->timestamps();
@@ -38,6 +32,6 @@ class CreateSignupsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('signups');
+        Schema::dropIfExists('pots');
     }
 }

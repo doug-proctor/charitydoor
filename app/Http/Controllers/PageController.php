@@ -8,10 +8,14 @@ use Illuminate\Support\Facades\DB;
 
 use App\Http\Requests;
 use App\Signup;
-use App\User;
+use App\Pot;
 
 use App\Mail\PleaseConfirmSignup;
+use App\Mail\PleaseConfirmIncrease;
+use App\Mail\PleaseConfirmPot;
 use App\Mail\SignupWasConfirmed;
+use App\Mail\IncreaseWasConfirmed;
+use App\Mail\PotWasConfirmed;
 
 class PageController extends Controller
 {
@@ -19,78 +23,92 @@ class PageController extends Controller
     public function index()
     {
     	$count_signups = DB::table('signups')->get()->count();
-    	// $count_pots = DB::table('pots')->get()->count();
-    	// $total = $count_signups + $count_pots;
-    	return view('home', compact('total', $count_signups));
+    	$count_pots = DB::table('pots')->get()->count();
+    	$total = $count_signups + $count_pots;
+    	return view('home', compact('total', $total));
     }
 
-    public function getStarted()
+    public function startPage()
     {
     	return view('signup.get-started');
     }
 
-    public function increase()
+    public function increasePage()
     {
-    	return view('increase');
+    	return view('increase.increase');
     }
     
-    public function unsure()
+    public function unsurePage()
     {
-    	return view('unsure');
+    	return view('signup.unsure');
     }
 
-    public function enter()
+    public function enterPage()
     {
     	return view('signup.enter');
     }
 
+    
+
     public function signup(Request $request)
     {
-
-    	$isNewUser = empty($request->all()['user_id']);
-
-		if ($isNewUser) {
-			$user = $this->createUser($request->all());
-		} else {
-			$user = User::findOrFail($request->all()['user_id']);
-		}
-
-    	$signup = $this->createSignup($request, $user);
-
-    	// Send a validation email?
-    	if ($this->sendConfirmationEmail($user, $signup)) {
-    		return view('unconfirmed');
+    	$signup = $this->createSignup($request);
+    	if ($this->sendSignupConfirmationEmail($signup)) {
+    		return view('signup.unconfirmed');
     	} else {
     		dd("Oops, we couldn't send the email...");
     	}
     }
 
-    public function createUser($request)
+    public function increase(Request $request)
     {
-    	$user = new User();
-    	$user->first_name = $request['user_firstname'];
-    	$user->last_name = $request['user_lastname'];
-    	$user->email = $request['user_email'];
-    	$user->save();
-		return $user;
+    	$increase = $this->createSignup($request);
+    	if ($this->sendIncreaseConfirmationEmail($increase)) {
+    		return view('increase.unconfirmed');
+    	} else {
+    		dd("Oops, we couldn't send the email...");
+    	}
     }
 
-    public function createSignup($request, $user)
+    public function pot(Request $request)
+    {
+    	$pot = $this->createPot($request);
+    	if ($this->sendPotConfirmationEmail($pot)) {
+    		return view('pot.unconfirmed');
+    	} else {
+    		dd("Oops, we couldn't send the email...");
+    	}
+    }
+
+    public function createSignup($request)
     {
     	$signup = new Signup($request->all());
-    	$signup->user_id = $user->id;
     	$signup->save();
 		return $signup;
     }
 
-    public function sendConfirmationEmail($user, $signup)
+    public function createPot($request)
     {
-    	// $to = 'hello@dougproctor.co.uk';
-    	// $subject = 'Confirm your donation';
-    	// $link = 'abc';
-    	// $body = 'Confirm your donation: ' . $link;
-    	// mail($to, $subject, $body);
-    	Mail::to($user)->send(new PleaseConfirmSignup($user, $signup));
+    	$pot = new Pot($request->all());
+    	$pot->save();
+		return $pot;
+    }
+
+    public function sendSignupConfirmationEmail($signup)
+    {
+    	Mail::to($signup->user_email)->send(new PleaseConfirmSignup($signup));
+    	return true;
+    }
+
+    public function sendIncreaseConfirmationEmail($increase)
+    {
+    	Mail::to($increase->user_email)->send(new PleaseConfirmIncrease($increase));
+    	return true;
+    }
+
+    public function sendPotConfirmationEmail($pot)
+    {
+    	Mail::to($pot->user_email)->send(new PleaseConfirmPot($pot));
     	return true;
     }
 
@@ -99,11 +117,27 @@ class PageController extends Controller
     	$signup = Signup::where('authorisation_code', $auth_code)->get()->first();
     	$signup->authorised = true;
     	$signup->authorisation_timestamp = time();
+    	
     	if ($signup->save()) {
-    		$user = $signup->user;
-    		Mail::to($user)->send(new SignupWasConfirmed($user, $signup));
-    		return view('finished');
+
+    		if ($signup->increase == true) {
+	    		Mail::to($signup->user_email)->send(new IncreaseWasConfirmed($signup));
+	    		return view('increase.finished', compact('signup', $signup));
+	    	} else {
+				Mail::to($signup->user_email)->send(new SignupWasConfirmed($signup));
+	    		return view('signup.finished', compact('signup', $signup));
+	    	}
+    	}
+    }   
+
+    public function authorisePot($auth_code)
+    {
+    	$pot = Pot::where('authorisation_code', $auth_code)->get()->first();
+    	$pot->authorised = true;
+    	$pot->authorisation_timestamp = time();
+    	if ($pot->save()) {
+    		Mail::to($pot->user_email)->send(new PotWasConfirmed($pot));
+    		return view('pot.finished', compact('pot', $pot));
     	}
     }
-    
 }

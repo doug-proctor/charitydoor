@@ -18,21 +18,19 @@
 </head>
 <body>
 
-	<h1>Donation confirmed!</h1>
+	<h1>Donation increase confirmed!</h1>
 
-	<p>Dear {{ ucfirst($signup->user_name) }},</p>
+	<p>Dear {{ ucfirst($increase->user_name) }},</p>
 
 	<p>Thank you for setting up a Give As You Earn donation. Everything is confirmed. Here are the details of the donation:</p>
 
 	<p>Here's your free coffee code. To redeemm it, show this email to the staff in the Engine canteen:</p>
 
-	<p>{{ strtoupper($signup->user_name) }}{{ $signup->authorisation_code }}</p>
+	<p>{{ strtoupper($increase->user_name) }}{{ $increase->authorisation_code }}</p>
 
 	<ul>
-		<li>Donation amount: &pound;{{ $signup->amount }}</li>
-		<li>Charity name: {{ $signup->charity_name }}</li>
-		<li>Charity address: {{ $signup->charity_address }}</li>
-		<li>Charity number: {{ $signup->charity_number }}</li>
+		<li>Donation amount: &pound;{{ $increase->amount }}</li>
+		<li>Charity name: {{ $increase->charity_name }}</li>
 	</ul>
 
 	<p>Thanks!<br>

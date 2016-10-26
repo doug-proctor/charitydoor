@@ -2,7 +2,7 @@
 
 namespace App\Mail;
 
-use App\User;
+//use App\User;
 use App\Signup;
 
 use Illuminate\Bus\Queueable;
@@ -14,7 +14,7 @@ class PleaseConfirmSignup extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $user;
+//    public $user;
     public $signup;
 
     /**
@@ -22,9 +22,9 @@ class PleaseConfirmSignup extends Mailable
      *
      * @return void
      */
-    public function __construct(User $user, Signup $signup)
+    public function __construct(Signup $signup)
     {
-        $this->user = $user;
+//        $this->user = $user;
         $this->signup = $signup;
     }
 

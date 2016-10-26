@@ -3,7 +3,7 @@
 
 	<div class="hero">
 		<div class="w-container">
-			<h1>Done!</h1>
+			<h1>Done! We've increased your donation amount</h1>
 			<h2>We've sent an email to <strong>{{ $signup->user_email }}</strong> with your free coffee voucher, redeemable at the bar.<br><br>Your first donation will be taken from your pay at the end of December 2016</h2>			
 		</div>
 		<div class="steps w-container">

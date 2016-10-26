@@ -15,18 +15,11 @@
 </head>
 <body id="app" class="xhas-person (( appState ))">
 
-<!-- 	@if (session('status'))
+ 	{{-- @if (session('status'))
 	    <div class="alert alert-success">
 	        {{ session('status') }}
 	    </div>
-	@endif -->
-
-	<ul>
-		<li><a href="/">Home</a></li>
-		<li><a href="/get-started">Get started</a></li>
-		<li><a href="/enter">Enter</a></li>
-		<li><a href="/unsure">Unsure</a></li>
-	</ul>
+	@endif --}}
 
    	@yield('content')
 	

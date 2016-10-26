@@ -8,14 +8,17 @@ class Signup extends Model
 {
     protected $fillable = [
         'amount',
+        'increase',
+        'user_name',
+        'user_email',
         'charity_name',
         'charity_number',
         'charity_address',
     ];
 
-    public function user() {
-        return $this->belongsTo('App\User');
-    }
+    // public function user() {
+    //     return $this->belongsTo('App\User');
+    // }
 
     public static function boot()
     {

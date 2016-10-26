@@ -1,7 +1,49 @@
 @extends('app')
 @section('content')
 
-	<div class="modal w-clearfix"><a class="w-clearfix w-inline-block x" href="#"><img class="x" data-ix="new-interaction-3" height="25" src="http://uploads.webflow.com/56b22c8c02de80c46a44196b/57f4d2f646d7daec0edce6db_X.png" width="25"></a><div class="pot-header w-container"><h3>Donate to the charity pot</h3><p class="centre">We'll be in touch each quarter to see if you want to give all or some of your pot to a charity</p></div><div class="pot-container w-container"><div class="w-form"><form data-name="Email Form" data-redirect="/thanks" id="email-form" name="email-form"><label class="label" for="Your-name-3">Your name</label><input class="field w-input" data-name="Your Name 3" id="Your-name-3" maxlength="256" name="Your-name-3" placeholder="Your name" required="required" type="text"><label class="label" for="Amount-3">How much, in total, would you like to donate each month?</label><input class="field w-input" data-name="Amount" id="Amount-3" maxlength="256" name="Amount" placeholder="£ Amount" required="required" type="text"><div class="confirmation w-checkbox"><input class="confirmation w-checkbox-input" data-name="Confirmation 3" id="Confirmation-3" name="Confirmation-3" required="required" type="checkbox"><label class="label label-small w-form-label" for="Confirmation-3">I confirm that I would like to donate this amount to this charity every month from my pay, until I decide otherwise.</label></div><input class="btn-a btn-form w-button" data-ix="new-interaction" data-wait="Please wait..." type="submit" value="Submit"></form><div class="success w-form-done"><p class="label success-label">Thank you! Your submission has been received!</p><a class="btn-a btn-c w-button w--current" href="/enter">Give to another charity</a></div><div class="error-message w-form-fail"><p class="bullet error-message">Oops! Something went wrong while submitting the form</p></div></div></div></div>
+	<div class="modal w-clearfix">
+		<a class="w-clearfix w-inline-block x" href="#">
+		<img class="x" data-ix="new-interaction-3" height="25" src="http://uploads.webflow.com/56b22c8c02de80c46a44196b/57f4d2f646d7daec0edce6db_X.png" width="25"></a>
+		<div class="pot-header w-container">
+			<h3>Donate to the charity pot</h3>
+			<p class="centre">We'll be in touch each quarter to see if you want to give all or some of your pot to a charity</p>
+		</div>
+		<div class="pot-container w-container">
+			<div class="w-form">
+
+				{{-- POT FORM --}}
+
+				<form action="/pot/" method="POST">
+					
+					<label class="label" for="user_name_pot">Your name</label>
+					<input class="field w-input" id="user_name_pot" maxlength="256" name="user_name" placeholder="Your name" required="required" type="text">
+
+					<label class="label" for="user_email_pot">Your email</label>
+					<input class="field w-input" id="user_email_pot" maxlength="256" name="user_email" placeholder="Your email address" required="required" type="text">
+		
+					<label class="label" for="amount_pot">How much, in total, would you like to donate each month?</label>
+					<input class="field w-input" data-name="Amount" id="amount_pot" maxlength="256" name="amount" placeholder="£ Amount" required="required" type="text">
+
+					<div class="confirmation w-checkbox">
+						<input class="confirmation w-checkbox-input" data-name="Confirmation 3" id="Confirmation-3" name="Confirmation-3" required="required" type="checkbox">
+						<label class="label label-small w-form-label" for="Confirmation-3">I confirm that I would like to donate this amount to this charity every month from my pay, until I decide otherwise.</label>
+					</div>
+					
+					<input type="hidden" name="_token" value="{{ csrf_token() }}">
+					<input class="btn-a btn-form w-button" type="submit" value="Submit">
+				</form>
+
+
+				<div class="success w-form-done">
+					<p class="label success-label">Thank you! Your submission has been received!</p>
+					<a class="btn-a btn-c w-button w--current" href="/enter">Give to another charity</a>
+				</div>
+				<div class="error-message w-form-fail">
+					<p class="bullet error-message">Oops! Something went wrong while submitting the form</p>
+				</div>
+			</div>
+		</div>
+	</div>
 
 	<div class="hero"><div class="w-container"><h1>Great, that's half the battle!</h1><h2>Now, let's choose an amount and set up your monthly donation.</h2></div><div class="steps w-container"><div class="w-row"><div class="w-col w-col-4 w-col-small-4 w-col-tiny-4"><a class="current-step step w-inline-block" href="/get-started"><div class="current-number number">1</div></a></div><div class="w-col w-col-4 w-col-small-4 w-col-tiny-4"><div class="current-step step"><div class="current-number number">2</div></div></div><div class="w-col w-col-4 w-col-small-4 w-col-tiny-4"><div class="step"><div class="number">3</div></div></div></div></div></div>
 

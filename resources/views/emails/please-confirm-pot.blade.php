@@ -18,21 +18,18 @@
 </head>
 <body>
 
-	<h1>Donation confirmation required</h1>
+	<h1>Pot signup confirmation required</h1>
 
-	<p>Dear {{ ucfirst($signup->user_name) }},</p>
+	<p>Dear {{ ucfirst($pot->user_name) }},</p>
 
 	<p>Thank you for setting up a Give As You Earn donation. To make sure you really did ask to set this up, we need you to confirm this request by clicking the confirmation link below:</p>
 
-	<p><a href="charitydoor.dev/auth/{{ $signup->authorisation_code }}">Authorise</a></p>
+	<p><a href="charitydoor.dev/auth/pot/{{ $pot->authorisation_code }}">Authorise</a></p>
 
 	<p>Here are the details of the donation request:</p>
 
 	<ul>
-		<li>Donation amount: &pound;{{ $signup->amount }}</li>
-		<li>Charity name: {{ $signup->charity_name }}</li>
-		<li>Charity address: {{ $signup->charity_address }}</li>
-		<li>Charity number: {{ $signup->charity_number }}</li>
+		<li>Donation amount: &pound;{{ $pot->amount }}</li>
 	</ul>
 
 	<p>Thanks!<br>

@@ -2,27 +2,27 @@
 
 namespace App\Mail;
 
-use App\Signup;
+use App\Pot;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class SignupWasConfirmed extends Mailable
+class PotWasConfirmed extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $signup;
+    public $pot;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct(Signup $signup)
+    public function __construct(Pot $pot)
     {
-        $this->signup = $signup;
+        $this->pot = $pot;
     }
 
     /**
@@ -32,6 +32,6 @@ class SignupWasConfirmed extends Mailable
      */
     public function build()
     {
-        return $this->subject('Signup confirmed')->view('emails.signup-was-confirmed');
+        return $this->subject('Pot confirmed')->view('emails.pot-was-confirmed');
     }
 }
