@@ -13,7 +13,7 @@
 
 				{{-- POT FORM --}}
 
-				<form action="/pot/" method="POST">
+				<form action="/pot" method="POST">
 					
 					<label class="label" for="user_name_pot">Your name</label>
 					<input class="field w-input" id="user_name_pot" maxlength="256" name="user_name" placeholder="Your name" required="required" type="text">
@@ -59,7 +59,7 @@
 
 						{{-- FORM --}}
 
-						<form action="/signup/" method="POST">
+						<form action="/signup" method="POST">
 						{{-- <form data-name="Email Form" data-redirect="/thanks" id="email-form" name="email-form"> --}}
 
 							{{-- 
