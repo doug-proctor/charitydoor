@@ -17,7 +17,7 @@ class Pot extends Model
         parent::boot();
 	    Pot::creating(function($pot)
 		{
-			$pot->authorisation_code = substr(str_shuffle(MD5(microtime())), 0, 32);
+			$pot->authorisation_code = substr(str_shuffle(MD5(microtime())), 0, 6);
 		});        
     }
 }
