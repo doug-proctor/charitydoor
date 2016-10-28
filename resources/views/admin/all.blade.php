@@ -4,6 +4,7 @@
 	}
 	table {
 		border-collapse: collapse;
+		font-size: 12px;
 	}
 	td {
 		border-bottom: 1px solid #D4D4D4;
