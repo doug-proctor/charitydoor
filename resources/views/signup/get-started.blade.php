@@ -5,6 +5,6 @@
 
 	<div class="bottom-section section-a"><div class="w-container"><h3 class="do-you-know"><strong data-new-link="true">First, do you know which charity you want to support? </strong><br><span class="you-can-choose">You can choose any, as long as they have a registered charity number.</span></h3></div><div class="btn-container container w-container"><a class="btn-a w-button" data-ix="new-interaction" href="/enter">Yes, let's do it!</a></div><div class="btn-container container w-container"><a class="btn-a btn-b w-button" data-ix="new-interaction" href="/unsure">I'm not sure, I'd like some help choosing</a></div></div>
 
-	@include('shared.footer');
+	@include('shared.footer')
 
 @endsection
