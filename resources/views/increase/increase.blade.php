@@ -42,6 +42,6 @@
 <br>Friday 4th November 9am – 12pm
 <br>Thursday 11th November 9am – 11am<br><br>or speak to your HR representative directly.</div></div></div></div></div></div>
 
-@include('shared.footer');
+@include('shared.footer')
 
 @endsection

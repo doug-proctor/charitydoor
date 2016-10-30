@@ -9,6 +9,7 @@ class Signup extends Model
     protected $fillable = [
         'amount',
         'increase',
+        'anonymous',
         'user_name',
         'user_email',
         'charity_name',
@@ -25,7 +26,7 @@ class Signup extends Model
         parent::boot();
 	    Signup::creating(function($signup)
 		{
-			$signup->authorisation_code = substr(str_shuffle(MD5(microtime())), 0, 32);
+			$signup->authorisation_code = substr(str_shuffle(MD5(microtime())), 0, 6);
 		});        
     }
 

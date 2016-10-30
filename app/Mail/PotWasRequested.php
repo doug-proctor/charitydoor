@@ -2,30 +2,27 @@
 
 namespace App\Mail;
 
-//use App\User;
-use App\Signup;
+use App\Pot;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class PleaseConfirmSignup extends Mailable
+class PotWasRequested extends Mailable
 {
     use Queueable, SerializesModels;
 
-//    public $user;
-    public $signup;
+    public $donation;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct(Signup $signup)
+    public function __construct(Pot $donation)
     {
-//        $this->user = $user;
-        $this->signup = $signup;
+        $this->donation = $donation;
     }
 
     /**
@@ -35,6 +32,6 @@ class PleaseConfirmSignup extends Mailable
      */
     public function build()
     {
-        return $this->subject('Confirmation required')->view('emails.please-confirm-signup');
+		return $this->subject('Confirmation required')->view('emails.donation-was-requested');
     }
 }

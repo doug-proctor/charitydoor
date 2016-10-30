@@ -1,4 +1,4 @@
-/* Generated on: Thu Oct 20 2016 11:16:40 GMT+0000 (UTC) */
+/* Generated on: Fri Oct 28 2016 15:26:30 GMT+0000 (UTC) */
 /* ==========================================================================
    normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css 
    ========================================================================== */
@@ -75,6 +75,11 @@ strong {
   background-color: #f3f3f3;
 }
 
+.body.body-hero {
+  height: 100%;
+  background-color: #0a446e;
+}
+
 .hero {
   margin-top: 0px;
   margin-bottom: 0px;
@@ -148,7 +153,7 @@ strong {
 .btn-a.hero-button {
   display: inline-block;
   width: 250px;
-  margin-top: 40px;
+  margin-top: 10px;
   margin-right: 10px;
   margin-left: 10px;
   -webkit-align-self: center;
@@ -384,8 +389,20 @@ strong {
 
 .centre.get-started {
   display: block;
-  padding-right: 100px;
-  padding-left: 100px;
+  padding-right: 0px;
+  padding-left: 0px;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-align-self: center;
+  -ms-flex-item-align: center;
+  align-self: center;
+  -webkit-box-flex: 0;
+  -webkit-flex: 0 auto;
+  -ms-flex: 0 auto;
+  flex: 0 auto;
 }
 
 .category {
@@ -502,10 +519,8 @@ strong {
 }
 
 .created-by {
-  display: block;
-  margin-top: 0px;
-  margin-right: auto;
-  margin-left: auto;
+  display: inline-block;
+  margin: 0px auto 20px;
   border-style: none;
   font-family: Lato, sans-serif;
   color: #3898ec;
@@ -596,7 +611,6 @@ strong {
 
 .totaliser {
   margin-top: 0px;
-  margin-bottom: 20px;
   font-family: 'Brownstd bold', sans-serif;
   font-size: 150px;
   line-height: 180px;
@@ -609,12 +623,13 @@ strong {
   top: 0px;
   right: 0px;
   bottom: 0px;
-  display: block;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
   overflow: visible;
   height: 100%;
-  min-height: 100%;
-  padding-top: 90px;
-  padding-bottom: 90px;
+  min-width: 100%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -webkit-flex-direction: column;
@@ -706,10 +721,22 @@ strong {
 
 .herotop {
   margin-top: 0px;
-  margin-bottom: 40px;
   color: #1f91c9;
   font-size: 60px;
   line-height: 70px;
+}
+
+.heroh2 {
+  display: block;
+  max-width: 700px;
+  margin-right: auto;
+  margin-left: auto;
+  font-size: 18px;
+  line-height: 34px;
+}
+
+.olb {
+  margin-top: 30px;
 }
 
 @media (max-width: 991px) {
@@ -740,6 +767,17 @@ strong {
   .steps {
     padding-right: 265px;
     padding-left: 265px;
+  }
+  .total-hero {
+    padding-top: 50px;
+    padding-bottom: 50px;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
+  }
+  .olb {
+    margin-bottom: 50px;
   }
 }
 
@@ -854,6 +892,28 @@ strong {
   .you-can-choose {
     line-height: 12px;
   }
+  .end {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+  .created-by {
+    display: block;
+  }
   .confirmation {
     display: block;
     margin-right: auto;
@@ -870,13 +930,42 @@ strong {
   }
   .total-hero {
     padding: 45px 10px 55px;
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -ms-flex-pack: start;
+    justify-content: flex-start;
   }
   .top {
     font-size: 28px;
   }
+  .modal {
+    display: none;
+    overflow: auto;
+    padding-right: 10px;
+    padding-bottom: 30px;
+    padding-left: 10px;
+  }
+  .x {
+    margin-top: 10px;
+    margin-right: 5px;
+  }
+  .pot-container {
+    padding-right: 0%;
+    padding-left: 0%;
+  }
   .herotop {
     font-size: 50px;
     line-height: 70px;
+  }
+  .olb {
+    margin-bottom: 40px;
+  }
+  .form {
+    text-align: center;
+  }
+  .modalh3 {
+    margin-top: 50px;
+    text-align: center;
   }
 }
 @font-face {

@@ -13,16 +13,16 @@ class PotWasConfirmed extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $pot;
+    public $donation;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct(Pot $pot)
+    public function __construct(Pot $donation)
     {
-        $this->pot = $pot;
+        $this->donation = $donation;
     }
 
     /**
@@ -32,6 +32,6 @@ class PotWasConfirmed extends Mailable
      */
     public function build()
     {
-        return $this->subject('Pot confirmed')->view('emails.pot-was-confirmed');
+		return $this->subject('Donation confirmed')->view('emails.donation-was-confirmed');
     }
 }

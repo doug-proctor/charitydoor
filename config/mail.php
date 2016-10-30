@@ -57,7 +57,7 @@ return [
 
     'from' => [
         'address' => 'noreply@enginegroup.com',
-        'name' => 'Give As You Earn',
+        'name' => 'Charity Cups',
     ],
 
     /*

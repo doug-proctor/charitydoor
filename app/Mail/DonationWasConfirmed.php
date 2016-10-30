@@ -9,20 +9,20 @@ use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class SignupWasConfirmed extends Mailable
+class DonationWasConfirmed extends Mailable
 {
     use Queueable, SerializesModels;
 
-    public $signup;
+    public $donation;
 
     /**
      * Create a new message instance.
      *
      * @return void
      */
-    public function __construct(Signup $signup)
+    public function __construct(Signup $donation)
     {
-        $this->signup = $signup;
+        $this->donation = $donation;
     }
 
     /**
@@ -32,6 +32,6 @@ class SignupWasConfirmed extends Mailable
      */
     public function build()
     {
-        return $this->subject('Signup confirmed')->view('emails.signup-was-confirmed');
+        return $this->subject('Donation confirmed')->view('emails.donation-was-confirmed');
     }
 }

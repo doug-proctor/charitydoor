@@ -3,6 +3,6 @@
 <p>Thanks!<br>
 	Engine HR</p>
 
-<div style="background-color: #0a446e; padding: 80px 0">
-	<img src="{{ public_path() . '/img/ourlittlebit.png' }}" alt="Engine | Our Little Bit">
+<div style="background-color: #0a446e; padding: 80px 0; text-align: center">
+	<img src="{{ asset('/img/ourlittlebit.png') }}" alt="Engine | Our Little Bit">
 </div>

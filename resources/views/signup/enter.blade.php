@@ -21,7 +21,7 @@
 					<label class="label" for="user_email_pot">Your email</label>
 					<input class="field w-input" id="user_email_pot" maxlength="256" name="user_email" placeholder="Your email address" required="required" type="text">
 		
-					<label class="label" for="amount_pot">How much, in total, would you like to donate each month?</label>
+					<label class="label" for="amount_pot">How much, in total, would you like to donate each month? (£5 is the minimum)</label>
 					<input class="field w-input" data-name="Amount" id="amount_pot" maxlength="256" name="amount" placeholder="£ Amount" required="required" type="text">
 
 					<div class="confirmation w-checkbox">
@@ -105,17 +105,17 @@
 							<label class="label" for="Charity-number">and their registered charity number?</label>
 							<input class="field w-input" id="Charity-number" maxlength="256" name="charity_number" placeholder="Registered charity number" required="required" type="text">
 							
-							<label class="label" for="Amount-3">How much would you like to donate each month?</label>
+							<label class="label" for="Amount-3">How much would you like to donate each month? (£3 is the minimum)</label>
 							<input class="field w-input" id="Amount-3" maxlength="256" name="amount" placeholder="£ Amount" required="required" type="text">
 							
 							<label class="label" for="Amount-3">Would you like your donation to be anonymous?</label>
 							<div class="anonymous-radio w-clearfix w-radio">
-								<input class="radio-button w-radio-input" id="Yes" name="Anonymous" type="radio" value="Yes">
+								<input class="radio-button w-radio-input" id="Yes" name="anonymous" type="radio" value="1">
 								<label class="label label-small w-form-label" for="Yes">Yes</label>
 							</div>
 
 							<div class="anonymous-radio anonymous-radio-right w-clearfix w-radio">
-								<input class="radio-button w-radio-input" id="No" name="Anonymous" type="radio" value="No">
+								<input class="radio-button w-radio-input" id="No" name="anonymous" type="radio" value="0">
 
 								<label class="label label-small w-form-label" for="No">No</label>
 							</div>

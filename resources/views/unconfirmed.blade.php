@@ -5,6 +5,6 @@
 
 	<div class="bottom-section changed-mind section-a"><div class="btn-container container w-container"><a class="btn-a w-button" data-ix="new-interaction" href="/enter">Give to another charity</a></div><div class="btn-container container w-container"><a class="btn-a btn-b w-button" data-ix="new-interaction" href="/increase">Increase your donation</a></div><div class="do-you-know grey-bg w-container"><p class="centre label">What if I change my mind?</p><p class="cancel">Don't worry, if you want to change the amount you give or the charity you give to, or even if you'd like to cancel, just login to your <a href="http://www.enginebenefits.com">Engine Benefits portal</a> and head to the 'benefits' area using the top navigation.</p></div></div>
 
-	@include('shared.footer');
+	@include('shared.footer')
 
 @endsection
