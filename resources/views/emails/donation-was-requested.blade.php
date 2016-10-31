@@ -7,7 +7,7 @@
 
 	<p>To make sure you really did ask to set this up, we need you to confirm this request by clicking the confirmation link below:</p>
 
-	<p><a class="button" href="charitydoor.dev/auth/{{ $donation->authorisation_code }}">Confirm this donation</a></p>
+	<p><a class="button" href="http://charitycups.enginegroup.com/auth/{{ $donation->authorisation_code }}">Confirm this donation</a></p>
 
 	{{--
 		<p>Here are the details of the donation request:</p>
