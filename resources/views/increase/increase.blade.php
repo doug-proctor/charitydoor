@@ -26,7 +26,7 @@
 						<input class="field w-input" id="charity_name" maxlength="256" name="charity_name" placeholder="Charity's name" required="required" type="text">
 
 						<label class="label" for="amount">How much would you like to increase your monthly donation by?</label>
-						<input class="field w-input" data-name="Amount" id="amount" maxlength="256" name="amount" placeholder="£ Amount" required="required" type="text">
+						<input class="field w-input" data-name="Amount" id="amount" maxlength="256" name="amount" placeholder="£ Amount" required="required" type="number" min="3">
 
 						<div class="confirmation w-checkbox">
 							<input class="confirmation w-checkbox-input" data-name="Confirmation" id="Confirmation" name="Confirmation" required="required" type="checkbox">
