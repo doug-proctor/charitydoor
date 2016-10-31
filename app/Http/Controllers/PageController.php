@@ -18,12 +18,17 @@ use App\Mail\PotWasRequested;
 class PageController extends Controller
 {
 
+    public function totaliser() 
+    {
+    	$count_signups = DB::table('signups')->get()->count();
+    	$count_pots = DB::table('pots')->get()->count();
+    	return $total = $count_signups + $count_pots;
+    }
+
     public function index()
     {
     	$title = 'Give As You Earn';
-    	$count_signups = DB::table('signups')->get()->count();
-    	$count_pots = DB::table('pots')->get()->count();
-    	$total = $count_signups + $count_pots;
+    	$total = $this->totaliser();
     	return view('home', compact('total', $total), compact('title', $title));
     }
 

@@ -29,3 +29,6 @@ Route::get('auth/{auth_code}', 'PageController@authoriseSignup');
 // Admin routes
 Route::get('admin/4f79462e77d50deed9f36f367e258632', 'AdminController@admin');
 Route::get('admin/4f79462e77d50deed9f36f367e258632/signup/view/{auth_code}', 'AdminController@viewSignup');
+
+//API routes
+Route::get('/totaliser', 'PageController@totaliser');
