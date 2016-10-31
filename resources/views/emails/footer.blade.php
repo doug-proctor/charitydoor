@@ -3,6 +3,6 @@
 <p>Thanks!<br>
 	Engine HR</p>
 
-<div style="background-color: #0a446e; padding: 80px 0; text-align: center">
+{{-- <div style="background-color: #0a446e; padding: 80px 0; text-align: center">
 	<img src="http://uploads.webflow.com/56b22c8c02de80c46a44196b/58135fd17c26cc8c35533eb1_ourlittlebitlogo.png" alt="Engine | Our Little Bit">
-</div>
+</div> --}}
