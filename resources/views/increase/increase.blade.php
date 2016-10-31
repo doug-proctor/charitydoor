@@ -20,7 +20,7 @@
 						<input class="field w-input" id="user_name" maxlength="256" name="user_name" placeholder="Your name" required="required" type="text">
 
 						<label class="label" for="user_email">Your email address</label>
-						<input class="field w-input" id="user_email" maxlength="256" name="user_email" placeholder="Your email address" required="required" type="text">
+						<input class="field w-input" id="user_email" maxlength="256" name="user_email" placeholder="Your email address" required="required" type="email">
 
 						<label class="label" for="charity_name">Which charity would you like to increase the amount for?</label>
 						<input class="field w-input" id="charity_name" maxlength="256" name="charity_name" placeholder="Charity's name" required="required" type="text">

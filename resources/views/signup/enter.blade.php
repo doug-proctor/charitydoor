@@ -19,7 +19,7 @@
 					<input class="field w-input" id="user_name_pot" maxlength="256" name="user_name" placeholder="Your name" required="required" type="text">
 
 					<label class="label" for="user_email_pot">Your email</label>
-					<input class="field w-input" id="user_email_pot" maxlength="256" name="user_email" placeholder="Your email address" required="required" type="text">
+					<input class="field w-input" id="user_email_pot" maxlength="256" name="user_email" placeholder="Your email address" required="required" type="email">
 		
 					<label class="label" for="amount_pot">How much, in total, would you like to donate each month? (£5 is the minimum)</label>
 					<input class="field w-input" data-name="Amount" id="amount_pot" maxlength="256" name="amount" placeholder="£ Amount" required="required" type="text">
@@ -93,7 +93,7 @@
 							<input class="field w-input" id="name" maxlength="256" name="user_name" placeholder="Your name" required="required" type="text">
 
 							<label class="label" for="user_email">Your email address</label>
-							<input class="field w-input" id="name" maxlength="256" name="user_email" placeholder="Your email address" required="required" type="text">
+							<input class="field w-input" id="name" maxlength="256" name="user_email" placeholder="Your email address" required="required" type="email">
 							
 							<label class="label" for="Charity-s-name">Which charity would you like to support?</label>
 							<input class="charity-field field w-input" id="Charity-s-name" maxlength="256" name="charity_name" placeholder="Charity's name" required="required" type="text">
