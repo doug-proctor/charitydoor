@@ -60,35 +60,7 @@
 						{{-- FORM --}}
 
 						<form action="/signup" method="POST">
-						{{-- <form data-name="Email Form" data-redirect="/thanks" id="email-form" name="email-form"> --}}
-
-							{{-- 
-								<input 
-									id="search" 
-									type="text" 
-									v-model="query"
-									@keyup="search" 
-									placeholder="Type your name..." 
-								>
-
-								<p>(( query ))</p>
-
-								<div class="userfields" style="display: xnone">
-									<input type="text" name="user_id" placeholder="user_id" value="">
-									<input type="text" name="user_firstname" placeholder="user_firstname">
-									<input type="text" name="user_lastname" placeholder="user_lastname">
-									<input type="text" name="user_email" placeholder="user_email">
-								</div>
-								
-								<input type="text" name="amount" placeholder="amount">
-								<input type="text" name="charity_name" placeholder="Charity name...">
-								<input type="text" name="charity_number" placeholder="Charity number...">
-								<input type="text" name="charity_address" placeholder="Charity address...">
-								<input type="hidden" name="_token" value="{{ csrf_token() }}">
-								<input type="submit" name="submit" value="Submit">
-								
-							--}}
-							
+													
 							<label class="label" for="user_name">Your name</label>
 							<input class="field w-input" id="name" maxlength="256" name="user_name" placeholder="Your name" required="required" type="text">
 
@@ -126,15 +98,9 @@
 							</div>
 							
 							<input type="hidden" name="_token" value="{{ csrf_token() }}">
-							
-							{{-- <input type="hidden" name="user_email" value="hello@dougproctor.co.uk">
-							<input type="hidden" name="user_firstname" value="test">
-							<input type="hidden" name="user_lastname" value="test"> --}}
 
 							<input class="btn-a btn-form w-button" type="submit" value="Submit">
 						</form>
-
-
 
 						<div class="success w-form-done">
 							<p class="label success-label">Thank you! Your submission has been received!</p>
@@ -165,40 +131,3 @@
 @include('shared.footer');
 	
 @endsection
-
-{{-- 
-<label class="label" for="Your-name">Your name</label>
-<input class="field w-input" data-name="Your name" id="Your-name" maxlength="256" name="Your-name" placeholder="Your name" required="required" type="text">
-
-<label class="label" for="Charity-s-name">Which charity would you like to support?</label>
-<input class="charity-field field w-input" data-name="Charity's name" id="Charity-s-name" maxlength="256" name="Charity-s-name" placeholder="Charity's name" required="required" type="text">
-<p class="pot-link">Alternatively you can <a data-ix="new-interaction-2" href="#">accumulate a Charity Pot</a>, to enable you to make ad hoc charity donations of your choice.</p>
-
-<label class="label" for="Charity-s-address">What's their registered address?</label>
-<input class="field w-input" data-name="Charity's address" id="Charity-s-address" maxlength="256" name="Charity-s-address" placeholder="Charity's address" type="text">
-
-<label class="label" for="Charity-number">and their registered charity number?</label>
-<input class="field w-input" data-name="Charity number" id="Charity-number" maxlength="256" name="Charity-number" placeholder="Registered charity number" required="required" type="text">
-
-<label class="label" for="Amount-3">How much would you like to donate each month?</label>
-<input class="field w-input" data-name="Amount" id="Amount-3" maxlength="256" name="Amount" placeholder="£ Amount" required="required" type="text">
-
-<label class="label" for="Amount-3">Would you like your donation to be anonymous?</label>
-<div class="anonymous-radio w-clearfix w-radio">
-	<input class="radio-button w-radio-input" data-name="Anonymous?" id="Yes" name="Anonymous" type="radio" value="Yes">
-	<label class="label label-small w-form-label" for="Yes">Yes</label>
-</div>
-
-<div class="anonymous-radio anonymous-radio-right w-clearfix w-radio">
-	<input class="radio-button w-radio-input" data-name="Anonymous?" id="No" name="Anonymous" type="radio" value="No">
-
-	<label class="label label-small w-form-label" for="No">No</label>
-</div>
-
-<div class="confirmation w-checkbox">
-	<input class="confirmation w-checkbox-input" data-name="Confirmation" id="Confirmation" name="Confirmation" required="required" type="checkbox">
-	<label class="label label-small w-form-label" for="Confirmation">I agree to the noted monthly deductions being processed via Engine payroll (or drawings if I'm a partner). Deductions will start in December 2016 and will be ongoing.</label>
-</div>
-
-<input class="btn-a btn-form w-button" data-ix="new-interaction" data-wait="Please wait..." type="submit" value="Submit">
- --}}

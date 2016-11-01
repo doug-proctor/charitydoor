@@ -25,7 +25,13 @@
 						<label class="label" for="charity_name">Which charity would you like to increase the amount for?</label>
 						<input class="field w-input" id="charity_name" maxlength="256" name="charity_name" placeholder="Charity's name" required="required" type="text">
 
-						<label class="label" for="amount">How much would you like to increase your monthly donation by?</label>
+						<label class="label" for="Charity-s-address">What's their registered address?</label>
+						<input class="field w-input" id="Charity-s-address" maxlength="256" name="charity_address" placeholder="Charity's address" type="text">
+
+						<label class="label" for="Charity-number">and their registered charity number?</label>
+						<input class="field w-input" id="Charity-number" maxlength="256" name="charity_number" placeholder="Registered charity number" required="required" type="text">
+
+						<label class="label" for="amount">How much would you like your new monthly donation to be?</label>
 						<input class="field w-input" data-name="Amount" id="amount" maxlength="256" name="amount" placeholder="£ Amount" required="required" type="number" min="3">
 
 						<div class="confirmation w-checkbox">
